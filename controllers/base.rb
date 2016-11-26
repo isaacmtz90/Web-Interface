@@ -16,10 +16,4 @@ class EventsLocator_Interface < Sinatra::Base
   after do
     content_type 'text/html'
   end
-
-
-  # Web Interface front page
-  get '/?' do
-    # ...
-  end
 end

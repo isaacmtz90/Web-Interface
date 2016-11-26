@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 require 'sinatra'
 require 'econfig'
+require 'slim'
 
 require_relative 'base'
 

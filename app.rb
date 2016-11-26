@@ -11,6 +11,6 @@ class EventsLocator_Interface < Sinatra::Base
 
   # Web Interface front page
   get '/?' do
-    # ...
+    "Hi there! xD"
   end
 end
