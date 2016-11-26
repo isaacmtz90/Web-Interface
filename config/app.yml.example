@@ -1,0 +1,12 @@
+---
+  development:
+    WEB_API_URL: ' '
+  test:
+    WEB_API_URL: ' '
+  production:
+    WEB_API_URL: ' '
+
+
+# Make a copy of this file
+# Add your meetup api_key
+# Rename the file to app.yml
