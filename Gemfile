@@ -8,6 +8,7 @@ gem 'slim'
 
 group :develop, :test do
   gem 'pry-byebug'
+  gem 'tux'
 end
 
 group :test do
