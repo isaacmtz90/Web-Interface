@@ -10,6 +10,9 @@ class EventsLocator_Interface < Sinatra::Base
   Econfig.env = settings.environment.to_s
   Econfig.root = settings.root
 
+  #use Rack::Session::Cookie, secret: EventsLocator_Interface.config.SECRET
+  #use Rack::Flash
+
   set :views, File.expand_path('../../views', __FILE__)
   set :public_dir, File.expand_path('../../public', __FILE__)
 

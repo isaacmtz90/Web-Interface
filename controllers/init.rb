@@ -1,7 +1,10 @@
 # frozen_string_literal: true
+# frozen_string_literal: true
 require 'sinatra'
+require 'slim/include'
 require 'econfig'
-require 'slim'
+require 'http'
+require 'rack-flash'
 
 require_relative 'base'
 
