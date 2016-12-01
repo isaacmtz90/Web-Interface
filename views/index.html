@@ -1,0 +1,159 @@
+<html><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    </head><body>
+        <div class="cover">
+            <div class="navbar">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active">
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">About&nbsp;Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Our Team</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us<br></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="cover-image" style="background-image : url('https://unsplash.imgix.net/photo-1422728221357-57980993ea99?w=1024&amp;q=50&amp;fm=jpg&amp;s=b4a34018d745e33048bcfc326cb9907b')"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <img class="center-block img-responsive" src="seislogo.png">
+                        <div class="container"></div>
+                        <hr>
+                        <div class="form-group has-success" id="txtBox">
+                            <div class="input-group input-group-lg">
+                                <input type="text" class="form-control" placeholder="Enter a City...">
+                                <span class="input-group-btn">
+                                    <a class="btn btn-lg btn-success" type="submit" id="searchBtn"><i class="fa fa-fw fa-search"></i>Search</a>
+                                    <a class="btn btn-lg btn-primary aroundme" type="submit" data-toggle="button" id="aroundMeBtn"><i class="fa fa-fw fa-location-arrow"></i>Around Me</a>
+                                </span>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="btn-group btn-group-lg" id="filtroDropDown">
+                            <a class="active btn btn-warning dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-down"></i>&nbsp; Categories<br></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#">Action</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row" id="panelperEvent">
+                    <div class="col-md-8">
+                        <div class="col-md-12">
+                            <ul class="media-list">
+                                <li class="media">
+                                    <a class="pull-left" href="#" id="eventImg"><img class="media-object" src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" height="64" width="64"></a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading" id="eventName">
+                                            <b>RubyCon</b>
+                                        </h4>
+                                        <h4 class="media-heading" id="eventDateTxt">December 22, 2016</h4>
+                                        <p id="eventDescriptionTxt">Description Bla Bla Bla Bla Bla Bla</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="wrapper" style="text-align: center">
+                        <div class="col-md-4">
+                            <div id="wrapper" style="text-align: center">
+                                <a class="btn btn-lg btn-primary" id="notifyBtn"><i class="fa fa-fw fa-bell"></i>&nbsp;Notify Me</a>
+                                <a class="btn btn-lg btn-primary" id="gotoeventBtn"><i class="fa fa-fw fa-link"></i>&nbsp;Go to Event<br></a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#">Prev</a>
+                            </li>
+                            <li>
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <a href="#">4</a>
+                            </li>
+                            <li>
+                                <a href="#">5</a>
+                            </li>
+                            <li>
+                                <a href="#">Next</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="section section-danger">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
+                                <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+</body></html>
