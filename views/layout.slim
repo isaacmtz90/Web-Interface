@@ -3,122 +3,34 @@ html
   head
     meta charset="utf-8" /
     meta content="width=device-width, initial-scale=1" name="viewport" /
-    script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript" 
-    script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript" 
+    script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"
+    script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"
     link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /
     link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css" /
   body
-    .cover
-      .navbar
-        .container
-          .navbar-header
-            button.navbar-toggle data-target="#navbar-ex-collapse" data-toggle="collapse" type="button" 
-              span.sr-only Toggle navigation
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-          #navbar-ex-collapse.collapse.navbar-collapse
-            ul.nav.navbar-nav.navbar-right
-              li.active
-                a href="#"  Home
-              li
-                a href="#"  About&nbsp;Us
-              li
-                a href="#"  Our Team
-              li
-                a href="#" 
-                  | Contact Us
-                  br/
-      .cover-image style=("background-image : url('https://unsplash.imgix.net/photo-1422728221357-57980993ea99?w=1024&amp;q=50&amp;fm=jpg&amp;s=b4a34018d745e33048bcfc326cb9907b')") 
+  .cover
+    .navbar
       .container
-        .row
-          .col-md-12.text-center
-            img.center-block.img-responsive src="seislogo.png" /
-            .container
-            hr/
-            #txtBox.form-group.has-success
-              .input-group.input-group-lg
-                input.form-control placeholder=("Enter a City...") type="text" /
-                span.input-group-btn
-                  a#searchBtn.btn.btn-lg.btn-success type="submit" 
-                    i.fa.fa-fw.fa-search
-                    | Search
-                  a#aroundMeBtn.btn.btn-lg.btn-primary.aroundme data-toggle="button" type="submit" 
-                    i.fa.fa-fw.fa-location-arrow
-                    | Around Me
-            br/
-            br/
-    .section
-      .container
-        .row
-          .col-md-12
-            #filtroDropDown.btn-group.btn-group-lg
-              a.active.btn.btn-warning.dropdown-toggle data-toggle="dropdown" 
-                i.fa.fa-caret-down
-                | \&nbsp; Categories
+        .navbar-header
+          button.navbar-toggle data-target="#navbar-ex-collapse" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        #navbar-ex-collapse.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li.active
+              a href="#"  Home
+            li
+              a href="#"  About&nbsp;Us
+            li
+              a href="#"  Our Team
+            li
+              a href="#"
+                | Contact Us
                 br/
-              ul.dropdown-menu role="menu" 
-                li
-                  a href="#"  Action
-        .row
-          .col-md-12
-            hr/
-        #panelperEvent.row
-          .col-md-8
-            .col-md-12
-              ul.media-list
-                li.media
-                  a#eventImg.pull-left href="#" 
-                    img.media-object height="64" src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" width="64" /
-                  .media-body
-                    h4#eventName.media-heading
-                      b RubyCon
-                    h4#eventDateTxt.media-heading December 22, 2016
-                    p#eventDescriptionTxt Description Bla Bla Bla Bla Bla Bla
-          #wrapper style=("text-align: center") 
-            .col-md-4
-              #wrapper style=("text-align: center") 
-                a#notifyBtn.btn.btn-lg.btn-primary
-                  i.fa.fa-fw.fa-bell
-                  | \&nbsp;Notify Me
-                a#gotoeventBtn.btn.btn-lg.btn-primary
-                  i.fa.fa-fw.fa-link
-                  | \&nbsp;Go to Event
-                  br/
-            hr/
-    .section
-      .container
-        .row
-          .col-md-12.text-center
-            ul.pagination
-              li
-                a href="#"  Prev
-              li
-                a href="#"  1
-              li
-                a href="#"  2
-              li
-                a href="#"  3
-              li
-                a href="#"  4
-              li
-                a href="#"  5
-              li
-                a href="#"  Next
-    footer.section.section-danger
-      .container
-        .row
-          .col-sm-6
-            .row
-              .col-md-12.hidden-lg.hidden-md.hidden-sm.text-left
-                a href="#" 
-                  i.fa.fa-3x.fa-fw.fa-instagram.text-inverse
-                a href="#" 
-                  i.fa.fa-3x.fa-fw.fa-twitter.text-inverse
-                a href="#" 
-                  i.fa.fa-3x.fa-fw.fa-facebook.text-inverse
-                a href="#" 
-                  i.fa.fa-3x.fa-fw.fa-github.text-inverse
-
-  section
-    == yield
+    .cover-image style=("background-image : url('https://unsplash.imgix.net/photo-1422728221357-57980993ea99?w=1024&amp;q=50&amp;fm=jpg&amp;s=b4a34018d745e33048bcfc326cb9907b')")
+    .container
+            section
+              include :flash_bar
+              == yield
