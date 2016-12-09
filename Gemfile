@@ -34,6 +34,8 @@ group :test do
 
   gem 'vcr'
   gem 'webmock'
+
+  gem 'watir'
 end
 
 group :development, :production do
