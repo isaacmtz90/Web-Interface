@@ -1,12 +1,13 @@
+# Class to retreieve the events from a city
 class EventsLocatorInterface < Sinatra::Base
   # Web Interface front page
   get '/?' do
     result = GetAllCities.call
     if result.success?
-      @cities = result.value
-      puts @cities
+      @cities = result.value.cities
+      # puts @cities
     else
-      flash[:error] = result.value.messages_file
+      flash[:error] = result.value.code
     end
     slim :city_search
   end

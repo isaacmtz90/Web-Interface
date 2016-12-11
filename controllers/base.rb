@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 # frozen_string_literal: true
 configure :development do
   def reload!
@@ -24,7 +23,6 @@ class EventsLocatorInterface < Sinatra::Base
 
   use Rack::Session::Cookie, secret: EventsLocatorInterface.config.SECRET
   use Rack::Flash
-
 
   set :views, File.expand_path('../../views', __FILE__)
   set :public_dir, File.expand_path('../../public', __FILE__)

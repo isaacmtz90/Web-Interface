@@ -4,6 +4,6 @@ CityRequest = Dry::Validation.Form do
   required(:city_name).filled
 
   configure do
-    config.messages_file = File.join(__dir__, 'errors/url_request.yml')
+    config.messages_file = File.join(__dir__, 'errors/city_request.yml')
   end
 end

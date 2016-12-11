@@ -1,6 +1,5 @@
 # frozen_string_literal: true
-
-# Gets list of all groups from API
+# class
 class GetAllCities
   extend Dry::Monads::Either::Mixin
 

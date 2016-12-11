@@ -1,7 +1,4 @@
 # frozen_string_literal: true
 
-# Represents a Event's stored information
-class Event < Sequel::Model
-  many_to_one :group
-  many_to_one :city
-end
+Event = Struct.new :id, :city_id, :event_name, :url, :origin, :status, :venue,
+                   :lat, :lon, :topic, :time

@@ -1,14 +1,19 @@
-
     .row
       .col-md-12.text-center
-        img.center-block.img-responsive src="seislogo.png" /
+        img.center-block.img-responsive src="./seislogo.png" /
         .container
         hr/
         #txtBox.form-group.has-success
           .input-group.input-group-lg
-            input.form-control placeholder=("Enter a City...") type="text" /
+            input{
+              class= "form-control"
+              placeholder= "(Enter a City)"
+              type="text"
+              id= "seachbox"
+            }
+            /.form-control placeholder=("Enter a City...") type="text" value="#{@cities[0]['name']}"
             span.input-group-btn
-              a#searchBtn.btn.btn-lg.btn-success type="submit"
+              a#searchBtn class=["btn","btn-lg","btn-success"] type="submit"
                 i.fa.fa-fw.fa-search
                 | Search
               a#aroundMeBtn.btn.btn-lg.btn-primary.aroundme data-toggle="button" type="submit"
@@ -16,3 +21,10 @@
                 | Around Me
         br/
         br/
+        ruby:
+          cities_object = @cities
+        javascript:
+          $(function() {$('#seachbox').selectize(
+          {persist:false, maxItem=null,
+           searchField:['name', 'country_code'],
+           options:#{cities_object}});});
