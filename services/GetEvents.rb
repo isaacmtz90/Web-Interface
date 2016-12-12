@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # class
-class GetAllCities
+class GetEvents
   extend Dry::Monads::Either::Mixin
 
   def self.call(city_id)
