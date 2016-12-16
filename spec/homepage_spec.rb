@@ -18,13 +18,12 @@ describe 'Homepage' do
     it '(HAPPY) should see website features' do
       # GIVEN
       @browser.goto homepage
-      @browser.seachbox.placeholder 'Enter a City...' #TODO: change test
-      @browser.searchBtn.type 'submit' #TODO: change test
-      @browser.aroundMeBtn.type 'submit' #TODO: change test
+      @browser.seachbox.placeholder 'Enter a City...' 
+      @browser.searchBtn.type 'submit'
+      @browser.aroundMeBtn.type 'submit'
 
       # THEN
-      @browser.button(name: 'new_group').visible?.must_equal true #TODO: change test
+      @browser.button(name: 'new_group').visible?.must_equal true
     end
-
-
+  end
 end
