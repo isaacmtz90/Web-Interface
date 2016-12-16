@@ -1,4 +1,4 @@
-class SearchCity
+class SearchCityPage
   include PageObject
 
   page_url 'http://localhost:9000/'
