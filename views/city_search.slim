@@ -3,28 +3,24 @@
         img.center-block.img-responsive src="http://i.imgur.com/jyC9rQg.png" /
         .container
         hr/
-        #txtBox.form-group.has-success
-          .input-group.input-group-lg
+        form role="form" action="/search" method='get' id='new-group-form'
+          div class="input-group input-group-lg"
             input{
-              class= "form-control"
-              placeholder= "(Enter a City)"
               type="text"
-              id= "seachbox"
+              class="has-success form-control"
+              name="search_keyword"
+              placeholder="Search for a topic (i.e 'Python')"
             }
-            /.form-control placeholder=("Enter a City...") type="text" value="#{@cities[0]['name']}"
-            span.input-group-btn
-              a#searchBtn class=["btn","btn-lg","btn-success"] type="submit"
-                i.fa.fa-fw.fa-search
-                | Search
-              a#aroundMeBtn.btn.btn-lg.btn-primary.aroundme data-toggle="button" type="submit"
-                i.fa.fa-fw.fa-location-arrow
-                | Around Me
+            span class="input-group-btn"
+              button {class="btn btn-search btn-lg btn-success"
+                      name="btn-search" type='submit'}
+                span
+                  i.fa.fa-fw.fa-search
+                |Search
+              button {class="btn btn-search btn-lg btn-primary"
+                        name="btn-search" type='submit'}
+                  span
+                    i.fa.fa-fw.fa-location-arrow
+                  |Around Me
         br/
         br/
-        ruby:
-          cities_object = @cities
-        javascript:
-          $(function() {$('#seachbox').selectize(
-          {persist:false, maxItem=null,
-           searchField:['name', 'country_code'],
-           options:#{cities_object}});});

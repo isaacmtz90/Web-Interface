@@ -1,38 +1,51 @@
-.section
-  .container
-    .row
-      .col-md-12
-        #filtroDropDown.btn-group.btn-group-lg
-          a.active.btn.btn-warning.dropdown-toggle data-toggle="dropdown"
-            i.fa.fa-caret-down
-            | &nbsp; Categories
-            br/
-          ul.dropdown-menu role="menu"
-            li
-              a href="#"  Action
-    .row
-      .col-md-12
-        hr/
-    #panelperEvent.row
-      .col-md-8
-        .col-md-12
-          ul.media-list
-            li.media
-              a#eventImg.pull-left href="#"
-                img.media-object height="64" src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" width="64" /
-              .media-body
-                h4#eventName.media-heading
-                  b RubyCon
-                h4#eventDateTxt.media-heading December 22, 2016
-                p#eventDescriptionTxt Description Bla Bla Bla Bla Bla Bla
-      #wrapper style=("text-align: center")
-        .col-md-4
-          #wrapper style=("text-align: center")
-            a#notifyBtn.btn.btn-lg.btn-primary
-              i.fa.fa-fw.fa-bell
-              | &nbsp;Notify Me
-            a#gotoeventBtn.btn.btn-lg.btn-primary
-              i.fa.fa-fw.fa-link
-              | &nbsp;Go to Event
-              br/
-        hr/
+.row
+  .col-md-12.text-center
+    .container
+    hr/
+    form role="form" action="/search" method='get' id='new-group-form'
+      div class="input-group input-group-lg"
+        input{
+          type="text"
+          class="has-success form-control"
+          name="search_keyword"
+          placeholder="Search for a topic (i.e 'Python')"
+        }
+        span class="input-group-btn"
+          button {class="btn btn-search btn-lg btn-success"
+                  name="btn-search" type='submit'}
+            span
+              i.fa.fa-fw.fa-search
+            |Search
+          button {class="btn btn-search btn-lg btn-primary"
+                    name="btn-around" type='submit'}
+              span
+                i.fa.fa-fw.fa-location-arrow
+              |Around Me
+    br/
+
+div.row
+  div.container-fluid
+        div.card-columns
+          - @event_results.each&.with_index do |event, index|
+            div class="card card-block text-xs-center card-inverse card-info"
+              div class="card-header" #{event.status}
+              div class="card-block"
+                h4 class="card-title" #{event.event_name}
+                p class="card-text"
+                  |Venue: #{event.venue}
+                p class = "card-text"
+                  |Time: #{event.time}
+                a {
+                  href="#"
+                  type="button"
+                  class="btn btn-success"
+                  data-target="#eventDescriptionModal"
+                  data-toggle="modal"
+                  data-evt_desc= "#{event.description}"
+                  data-evt_name= "#{event.event_name}"
+                  data-evt_url= "#{event.url}"
+                  }See more
+                a{
+                  href="#" class="btn btn-primary"
+                 } Location
+include :event_descr_modal

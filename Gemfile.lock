@@ -182,7 +182,6 @@ DEPENDENCIES
   tux
   watir-webdriver
 
-
 RUBY VERSION
    ruby 2.3.1p112
 

@@ -5,11 +5,22 @@ class EventsLocatorInterface < Sinatra::Base
     result = GetAllCities.call
     if result.success?
       @cities = result.value.cities
-      # puts @cities
     else
       flash[:error] = result.value.code
     end
     slim :city_search
+  end
+
+  get '/search' do
+    result = SearchEvents.call(params[:search_keyword])
+    if result.success?
+      @event_results = result.value.events
+      slim :events_result
+    else
+      flash[:error] = result.value.code
+      redirect '/'
+    end
+
   end
 
   get '/city/:id/?' do

@@ -1,0 +1,40 @@
+div id="eventDescriptionModal" class="modal fade" role="dialog"
+  div class="modal-dialog"
+    div class="modal-content"
+      div class="modal-header"
+        h4  id="the-modal-title" Event
+      div class="modal-body"
+        button{
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          }
+          span aria-hidden="true" &times
+      div class="modal-body" id="event-description"
+      div class="modal-footer"
+        button{
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        }Close
+        button{
+           id="btn-gotoweb"
+           type="button"
+           class="btn btn-primary"
+        }Go to website
+
+javascript:
+  var modal_redirect_url
+  $('#eventDescriptionModal').on('show.bs.modal', function(e) {
+    vary =( $(e.relatedTarget).data())
+    console.log(vary)
+    var modal = $("#event-description")
+    modal_redirect_url = vary.evt_url
+    $("#the-modal-title").text(vary.evt_name)
+    modal.html(vary.evt_desc);
+  })
+
+  $('#btn-gotoweb').on('click', function(e){
+    window.open(modal_redirect_url)
+  })

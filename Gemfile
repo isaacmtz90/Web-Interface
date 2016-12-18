@@ -9,7 +9,6 @@ gem 'econfig'
 gem 'rake'
 gem 'slim'
 gem 'rack-flash3'
-
 gem 'http'
 
 gem 'roar'
