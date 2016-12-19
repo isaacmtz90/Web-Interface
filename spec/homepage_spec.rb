@@ -15,13 +15,17 @@ describe 'Homepage' do
   end
 
   describe 'Page elements' do
-    it '(HAPPY) should see website features' do
-      # GIVEN
-      @browser.goto homepage
-      @browser.title.must_include 'Groupster' #TODO: change test
-      @browser.h1.text.must_include 'Groupster' #TODO: change test
+    visit SearchCityPage do |page|
+      it '(HAPPY) should see website features' do
+        # GIVEN
+        @browser.goto homepage
+        page.search_bar.placeholder 'Enter a City...'
+        page.search_button.type 'submit'
+        page.around_me_button.type 'submit'
 
-      # THEN
-      @browser.button(name: 'new_group').visible?.must_equal true #TODO: change test
+        # THEN
+        @browser.button(name: 'new_group').visible?.must_equal true
+      end
     end
+  end
 end
