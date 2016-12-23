@@ -56,25 +56,15 @@ div.row
               div class="card-block"
                 h4 class="card-title" #{event.event_name}
                 p class="card-text"
-                  |Venue: #{event.venue}
+                  |Latitute: #{event.lat}
                 p class = "card-text"
-                  |Time: #{event.time}
-                a {
-                  href="#"
-                  type="button"
-                  class="btn btn-success"
-                  data-target="#eventDescriptionModal"
-                  data-toggle="modal"
-                  data-evt_desc= "#{event.description}"
-                  data-evt_name= "#{event.event_name}"
-                  data-evt_url= "#{event.url}"
-                  }See more
+                  |Longitude: #{event.lon}
                 a{
                   href="#"
                   class="btn btn-primary"
                   data-target="#eventDescriptionModal"
                   data-toggle="modal"
-                  data-evt_desc= "Textbox and Botton"
+                  data-evt_desc= "Textbox and Btn"
                   data-evt_name= "Notify me about #{event.event_name}"
                   data-evt_url= "#{event.url}"
                  }

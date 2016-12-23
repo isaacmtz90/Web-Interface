@@ -23,6 +23,18 @@ class EventsLocatorInterface < Sinatra::Base
 
   end
 
+  get '/around' do
+    result = SearchEvents.call(params[:search_keyword])
+    if result.success?
+      @event_results = result.value.events
+      slim :around_me_result
+    else
+      flash[:error] = result.value.code
+      redirect '/'
+    end
+
+  end
+
   get '/city/:id/?' do
     event_details = GetEvents.call(params)
     if event_details.success?
