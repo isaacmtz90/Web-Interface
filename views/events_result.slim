@@ -1,3 +1,27 @@
+css:
+  .tooltip {
+      | position: relative;
+      | display: inline-block;
+      | border-bottom: 1px dotted black;
+  | }
+
+  .tooltip .tooltiptext {
+      | visibility: hidden;
+      | width: 120px;
+      | background-color: black;
+      | color: #fff;
+      | text-align: center;
+      | border-radius: 6px;
+      | padding: 5px 0;
+
+      /!* Position the tooltip */
+      | position: absolute;
+      | z-index: 1;
+  | }
+
+  .tooltip:hover .tooltiptext {
+      | visibility: visible;
+  | }
 .row
   .col-md-12.text-center
     .container
@@ -46,6 +70,17 @@ div.row
                   data-evt_url= "#{event.url}"
                   }See more
                 a{
-                  href="#" class="btn btn-primary"
-                 } Location
+                  href="#"
+                  class="btn btn-primary"
+                  data-target="#eventDescriptionModal"
+                  data-toggle="modal"
+                  data-evt_desc= "Textbox and Btn"
+                  data-evt_name= "Notify me about #{event.event_name}"
+                  data-evt_url= "#{event.url}"
+                 }
+                 span
+                   .tooltip
+                   i.fa.fa-fw.fa-bell aria-hidden="true"
+                   span.tooltiptext Notify Me
+
 include :event_descr_modal
