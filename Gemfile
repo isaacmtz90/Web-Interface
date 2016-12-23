@@ -18,6 +18,8 @@ gem 'dry-validation'
 gem 'dry-container'
 gem 'dry-transaction'
 
+gem 'concurrent-ruby'
+
 group :development do
   gem 'rerun'
 
