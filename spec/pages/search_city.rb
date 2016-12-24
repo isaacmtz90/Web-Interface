@@ -5,7 +5,7 @@ class SearchCityPage
 
   #image(:seis_logo, id: )
 
-  link(:home, class: active)
+  link(:home, class: 'active')
 
   text_field(:search_bar, id: seachbox)
   button(:search_button, id: searchBtn)
