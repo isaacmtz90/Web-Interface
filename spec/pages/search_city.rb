@@ -7,7 +7,7 @@ class SearchCityPage
 
   link(:home, class: 'active')
 
-  text_field(:search_bar, id: seachbox)
-  button(:search_button, id: searchBtn)
-  button(:around_me_button, id: aroundMeBtn)
+  text_field(:search_bar, id: 'seachbox')
+  button(:search_button, id: 'searchBtn')
+  button(:around_me_button, id: 'aroundMeBtn')
 end
