@@ -8,30 +8,25 @@ html
     script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" type="text/javascript"
     link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /
     link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"  rel="stylesheet" type="text/css" /
-    css:
-      .blok2 {
-        height: 100%;
-        background-image: url(http://www.youwall.com/papel/forest_wallpaper_8d927.jpg);
-        background-position: center bottom;
-        background-size: cover;
-      }
-      .blok1 {
-        height: 100%;
-        background-image: url(https://images.unsplash.com/photo-1465385621528-53653983a38f?dpr=1.350000023841858&auto=format&fit=crop&w=1199&h=796&q=80&cs=tinysrgb&crop=);
-        background-position: center bottom;
-        background-size: cover;
-      }
-      html, body {
-        margin: 0;
-        height: 100%;
-      }
 
+  css:
+    body {
+      padding-top: 5rem;
+    }
+    .starter-template {
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
   body
-    .navbar.navbar-default
-    .container-fluid
-      .navbar-header
-        a class="navbar-brand" href="#"
-      .container
-        section
-          include :flash_bar
-          == yield
+    nav.navbar.navbar-dark.bg-inverse.navbar-fixed-top
+     .nav.navbar-nav
+        a.navbar-brand href="/"
+          |EVT
+        a.nav-item.nav-link href="#"
+          |Home
+        a.nav-item.nav-link href="#"
+          |About
+    .container
+      section
+        include :flash_bar
+      == yield

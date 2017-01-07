@@ -17,7 +17,7 @@ class EventsLocatorInterface < Sinatra::Base
       @event_results = result.value.events
       slim :events_result
     else
-      flash[:error] = result.value.code
+      flash[:error] = "#{result.value.message} #{result.value.code}"
       redirect '/'
     end
 
