@@ -1,0 +1,4 @@
+en:
+  errors:
+    inputName: 'Please provide your name'
+    inputPhone: 'Provide a valid phone number in the format 999999999'
