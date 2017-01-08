@@ -1,9 +1,10 @@
 form role="form" action="/search" method='get' id='search-form' class=""
   .input-group.input-group-lg
     select.form-control id ='cityselect' name="city_id"
+      option id="city-0" value="0"All Cities
       - @cities.each&.with_index do |city, index|
         option id="city-#{index}" value="#{city.id}" #{city.name}
-      option id="city-0" value="0"All Cities
+
     span.input-group-addon style="width:0px; padding-left:0px; padding-right:0px; border:none;"
     input.has-success.form-control {
       type="text"
