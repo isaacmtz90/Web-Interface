@@ -1,7 +1,6 @@
 form role="form" action="/search" method='get' id='search-form' class=""
   .input-group.input-group-lg
     select.form-control id ='cityselect' name="city_id"
-      option value="0"All Cities
       - @cities.each&.with_index do |city, index|
         option id="city-#{index}" value="#{city.id}" #{city.name}
       option id="city-0" value="0"All Cities

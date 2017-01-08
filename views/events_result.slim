@@ -33,7 +33,7 @@ div.row
         div.card-columns
           - @event_results.each&.with_index do |event, index|
             div.card.card-block.text-xs-center.card-inverse.card-info
-              .card-header #{event.city.name} - #{event.status} 
+              .card-header #{event.city.name} - #{event.status}
               .card-block
                 h4.card-title #{event.event_name}
                 p.card-text
@@ -51,7 +51,7 @@ div.row
                     href="#"
                     type="button"
                     class="btn btn-primary"
-                    data-target="#eventDescriptionModal"
+                    data-target="#smsInvitationModal"
                     data-toggle="modal"
                     data-evt_desc= "Textbox and Btn"
                     data-evt_name= "Notify me about #{event.event_name}"
@@ -62,4 +62,4 @@ div.row
                      i.fa.fa-fw.fa-bell aria-hidden="true"
                      span.tooltiptext Invite Friends
 
-include :event_descr_modal
+include :sms_invitation_modal
