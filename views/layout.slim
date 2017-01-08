@@ -18,6 +18,7 @@ html
       text-align: center;
     }
   body
+    include :add_city_modal
     nav.navbar.navbar-dark.bg-inverse.navbar-fixed-top
      .nav.navbar-nav
         a.navbar-brand href="/"
@@ -26,7 +27,11 @@ html
           |Home
         a.nav-item.nav-link href="#"
           |About
+        form.form-inline.float-xs-right
+          button.btn.btn-outline-success type="button" data-toggle="modal" data-target="#addCityModal" Track a New City
+
     .container
+
       section
         include :flash_bar
       == yield

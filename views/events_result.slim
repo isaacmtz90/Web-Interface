@@ -25,62 +25,45 @@ css:
 .row
   .col-md-12.text-center
     .container
-    hr/
-    form role="form" action="/search" method='get' id='new-group-form'
-      div class="input-group input-group-lg"
-        input{
-          type="text"
-          class="has-success form-control"
-          name="search_keyword"
-          placeholder="Search for a topic (i.e 'Python')"
-        }
-        span class="input-group-btn"
-          button {class="btn btn-search btn-lg btn-success"
-                  name="btn-search" type='submit'}
-            span
-              i.fa.fa-fw.fa-search
-            |Search
-          button {class="btn btn-search btn-lg btn-primary"
-                    name="btn-around" type='submit'}
-              span
-                i.fa.fa-fw.fa-location-arrow
-              |Around Me
-    br/
-
+    hr
+    include :search_form_partial/
+    br
 div.row
   div.container-fluid
         div.card-columns
           - @event_results.each&.with_index do |event, index|
-            div class="card card-block text-xs-center card-inverse card-info"
-              div class="card-header" #{event.status}
-              div class="card-block"
-                h4 class="card-title" #{event.event_name}
-                p class="card-text"
+            div.card.card-block.text-xs-center.card-inverse.card-info
+              .card-header #{event.status}
+              .card-block
+                h4.card-title #{event.event_name}
+                p.card-text
                   |Venue: #{event.venue}
-                p class = "card-text"
+                p.card-text
                   |Time: #{event.time}
-                a {
-                  href="#"
-                  type="button"
-                  class="btn btn-success"
-                  data-target="#eventDescriptionModal"
-                  data-toggle="modal"
-                  data-evt_desc= "#{event.description}"
-                  data-evt_name= "#{event.event_name}"
-                  data-evt_url= "#{event.url}"
-                  }See more
-                a{
-                  href="#"
-                  class="btn btn-primary"
-                  data-target="#eventDescriptionModal"
-                  data-toggle="modal"
-                  data-evt_desc= "Textbox and Botton"
-                  data-evt_name= "Notify me about #{event.event_name}"
-                  data-evt_url= "#{event.url}"
-                 }
-                 span
-                   .tooltip
-                   i.fa.fa-fw.fa-bell aria-hidden="true"
-                   span.tooltiptext Notify Me
+                .btn-group
+                  a {
+                    href="#"
+                    type="button"
+                    class="btn btn-success"
+                    data-target="#eventDescriptionModal"
+                    data-toggle="modal"
+                    data-evt_desc= "#{event.description}"
+                    data-evt_name= "#{event.event_name}"
+                    data-evt_url= "#{event.url}"
+                    }See more
+                  a{
+                    href="#"
+                    type="button"
+                    class="btn btn-primary"
+                    data-target="#eventDescriptionModal"
+                    data-toggle="modal"
+                    data-evt_desc= "Textbox and Btn"
+                    data-evt_name= "Notify me about #{event.event_name}"
+                    data-evt_url= "#{event.url}"
+                   }
+                   span
+                     .tooltip
+                     i.fa.fa-fw.fa-bell aria-hidden="true"
+                     span.tooltiptext Invite Friends
 
 include :event_descr_modal

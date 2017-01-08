@@ -14,9 +14,9 @@ class SearchEvents
   }
   register :get_search_results, lambda { |term|
     results =
-      HTTP.get("#{EventsLocatorInterface.config.WEB_API_URL}/events/search/#{term}")
+      HTTP.get("#{EventsLocatorInterface.api_ver_url}/events/search/#{term}")
     if results.status >= 400
-      Left(Error.new(:internal_error, 'Our servers failed - nothing here!'))
+      Left(Error.new('Seems like we dont have events related to your search, try something different'))
     else
       Right(EventsRepresenter.new(Events.new)
                              .from_json(results.body))

@@ -1,0 +1,26 @@
+div id="addCityModal" class="modal fade" role="dialog"
+  div class="modal-dialog"
+    div class="modal-content"
+      div class="modal-header"
+        h4  id="the-modal-title" Add City
+      div class="modal-body"
+        form role="form" action="/add_city" method='post' id='new-group-form'
+          .input-group.input-group-lg
+            input.has-success.form-control {
+              type="text"
+              placeholder="In Taiwan(i.e 'Hsinchu')"
+              name="city_name"
+            }
+            span.input-group-btn align="right"
+              button.btn.btn-search.btn-primary {
+                 id="btn-addcty"
+                 type="submit"
+                 class="submit"
+                 value="submit"
+
+              }Add City
+              button{
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              }Cancel

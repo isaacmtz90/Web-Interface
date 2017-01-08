@@ -1,37 +1,12 @@
 link href="css/animate.css" media="all" rel="stylesheet" type="text/css" /
 script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"
-.container
+.container-fluid
   .row
     div align="center"
       img.center-block.img-responsive src="http://i.imgur.com/jyC9rQg.png" /
-      .container-fluid
-        br
-        form role="form" action="/search" method='get' id='new-group-form' class="form-inline"
-          .input-group.input-group-lg
-            select.form-control
-              - @cities.each&.with_index do |city, index|
-                option value="#{city.id}" #{city.name}
-              option data-divider="true"
-              option
-                a href="#"  Add New
-              option selected="" Select city
-            span.input-group-addon style="width:0px; padding-left:0px; padding-right:0px; border:none;"
-            input.has-success.form-control {
-              type="text"
-              placeholder="Search for a topic (i.e 'Python')"
-              name="search_keyword"
-            }
-            span.input-group-btn
-              button.btn.btn-search.btn-success name="btn-search" type="submit"
-                span
-                  i.fa.fa-fw.fa-search
-                |Search
-            span.input-group-btn
-              button.btn.btn-search.btn-primary name="btn-search" type="submit"
-                span
-                  i.fa.fa-fw.fa-location-arrow
-                |Around Me
-
-
-        br/
-        br/
+  .row
+    .container-fluid align="center"
+      br
+      include :search_form_partial/
+      br/
+      br/

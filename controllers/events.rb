@@ -6,21 +6,39 @@ class EventsLocatorInterface < Sinatra::Base
     if result.success?
       @cities = result.value.cities
     else
-      flash[:error] = result.value.code
+      flash[:error] = result.value.message
     end
     slim :city_search
   end
 
   get '/search' do
+    cities = GetAllCities.call
+    if cities.success?
+      @cities = cities.value.cities
+    else
+      flash[:error] = cities.value.message
+    end
     result = SearchEvents.call(params[:search_keyword])
     if result.success?
       @event_results = result.value.events
       slim :events_result
     else
-      flash[:error] = "#{result.value.message} #{result.value.code}"
+      flash[:error] = result.value.message.to_s
       redirect '/'
     end
+  end
 
+  get '/event/:id' do
+    event_details = GetEventDetails.call(params)
+    if event_details.success?
+      # puts event_details.value.from_json
+      @event = event_details.value
+      puts @event
+      slim :event_landing
+    else
+      flash[:error] = 'Could not find that event --Maybe they dont want to invite you?'
+      redirect '/'
+    end
   end
 
   get '/around' do
@@ -30,19 +48,6 @@ class EventsLocatorInterface < Sinatra::Base
       slim :around_me_result
     else
       flash[:error] = result.value.code
-      redirect '/'
-    end
-
-  end
-
-  get '/city/:id/?' do
-    event_details = GetEvents.call(params)
-    if event_details.success?
-      events = event_details.value
-      @event = EventDetailsView.new(events)
-      slim :group_details
-    else
-      flash[:error] = 'Could not find that city -- we are investigating!'
       redirect '/'
     end
   end

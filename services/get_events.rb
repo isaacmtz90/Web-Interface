@@ -11,7 +11,7 @@ class GetEvents
     end
   }
   register :retrieve_events_from_api, lambda { |city_id|
-    results = HTTP.get("#{EventsLocatorInterface.config.WEB_API_URL}/city/#{city_id}/events")
+    results = HTTP.get("#{EventsLocatorInterface.api_ver_url}/city/#{city_id}/events")
     if results.empty? == False
       Right(EventsRepresenter.new(Events.new)
                            .from_json(results.body))

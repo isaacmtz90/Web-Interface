@@ -30,4 +30,12 @@ class EventsLocatorInterface < Sinatra::Base
   after do
     content_type 'text/html'
   end
+
+  def self.api_ver_url
+    [config.API_SERVER, config.API_VER].join('/')
+  end
+  
+  def self.maps_api_key
+    config.MAPS_API_KEY
+  end
 end

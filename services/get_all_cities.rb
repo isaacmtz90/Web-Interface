@@ -5,7 +5,7 @@ class GetAllCities
   extend Dry::Monads::Either::Mixin
 
   def self.call
-    results = HTTP.get("#{EventsLocatorInterface.config.WEB_API_URL}/cities")
+    results = HTTP.get("#{EventsLocatorInterface.api_ver_url}/cities")
     Right(CitiesRepresenter.new(Cities.new)
                            .from_json(results.body))
   rescue
