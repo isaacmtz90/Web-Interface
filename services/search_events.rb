@@ -5,16 +5,19 @@ class SearchEvents
   extend Dry::Container::Mixin
 
   register :check_input_valid, lambda { |param|
-
-    if param.nil? || param.empty?
+    keyword = param[:search_keyword]
+    if keyword.nil? || keyword.empty?
       Left(Error.new('Please enter a valid search'))
     else
       Right(param)
     end
   }
-  register :get_search_results, lambda { |term|
+  register :get_search_results, lambda { |param|
+    puts param
+    city = param[:city_id]
+    keyword = param[:search_keyword]
     results =
-      HTTP.get("#{EventsLocatorInterface.api_ver_url}/events/search/#{term}")
+      HTTP.get("#{EventsLocatorInterface.api_ver_url}/events/search/#{city}/#{keyword}")
     if results.status >= 400
       Left(Error.new('Seems like we dont have events related to your search, try something different'))
     else

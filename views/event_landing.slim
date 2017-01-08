@@ -2,14 +2,18 @@
   .row
     .col-md-4
       .card
+
         img.card-img-top.img-fluid alt=("Card image cap") src="/images/rsz_urban.jpg" /
         .card-block
           h4.card-title #{@event[:event_name]}
           p.card-text
             - unless @event[:venue].empty?
-              |Venue:  #{@event[:venue]}
+              |Venue:  #{@event[:venue]} 
+          p.card-text
             |Status: #{@event[:status]}
           a.btn.btn-primary href="#{@event[:url]}"  Go to Website
+        .card-footer
+          |#{@event[:city][:name]}
 
 
     .col-md-8

@@ -33,23 +33,19 @@ div.row
         div.card-columns
           - @event_results.each&.with_index do |event, index|
             div.card.card-block.text-xs-center.card-inverse.card-info
-              .card-header #{event.status}
+              .card-header #{event.city.name} - #{event.status} 
               .card-block
                 h4.card-title #{event.event_name}
                 p.card-text
-                  |Venue: #{event.venue}
+                  - unless event.venue.empty?
+                    |Venue: #{event.venue}
                 p.card-text
                   |Time: #{event.time}
                 .btn-group
                   a {
-                    href="#"
+                    href="/event/#{event.id}"
                     type="button"
                     class="btn btn-success"
-                    data-target="#eventDescriptionModal"
-                    data-toggle="modal"
-                    data-evt_desc= "#{event.description}"
-                    data-evt_name= "#{event.event_name}"
-                    data-evt_url= "#{event.url}"
                     }See more
                   a{
                     href="#"

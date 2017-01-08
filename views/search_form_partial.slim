@@ -1,11 +1,14 @@
-form role="form" action="/search" method='get' id='new-group-form' class=""
+form role="form" action="/search" method='get' id='search-form' class=""
   .input-group.input-group-lg
-    select.form-control
+    select.form-control id ='cityselect' name="city_id"
+      option value="0"All Cities
       - @cities.each&.with_index do |city, index|
-        option value="#{city.id}" #{city.name}
+        option id="city-#{index}" value="#{city.id}" #{city.name}
+      option id="city-0" value="0"All Cities
     span.input-group-addon style="width:0px; padding-left:0px; padding-right:0px; border:none;"
     input.has-success.form-control {
       type="text"
+      value="#{flash[:search_keyword]}"
       placeholder="Search for a topic (i.e 'Python')"
       name="search_keyword"
     }
@@ -19,3 +22,9 @@ form role="form" action="/search" method='get' id='new-group-form' class=""
         span
           i.fa.fa-fw.fa-location-arrow
         |Around Me
+javascript:
+  (document).ready(function() {
+    $('#cityselect').on('change', function() {
+     document.forms['search-form'].submit();
+    });
+  });

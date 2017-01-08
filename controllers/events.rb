@@ -2,6 +2,7 @@
 class EventsLocatorInterface < Sinatra::Base
   # Web Interface front page
   get '/?' do
+    flash[:search_keyword] = ''
     result = GetAllCities.call
     if result.success?
       @cities = result.value.cities
@@ -18,8 +19,11 @@ class EventsLocatorInterface < Sinatra::Base
     else
       flash[:error] = cities.value.message
     end
-    result = SearchEvents.call(params[:search_keyword])
+    result = SearchEvents.call(params)
+
     if result.success?
+      flash[:search_keyword] = params['search_keyword']
+      flash[:selected_city] = params['city_id']
       @event_results = result.value.events
       slim :events_result
     else
